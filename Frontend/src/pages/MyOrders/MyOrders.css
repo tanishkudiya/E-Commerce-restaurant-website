@@ -1,0 +1,120 @@
+/* Orders Container */
+.my-orders {
+    max-width: 1200px;
+    margin: 80px auto 40px; /* Adjusted margin to avoid overlapping with navbar */
+    padding: 20px;
+    min-height: 60vh;
+}
+
+/* Orders Heading */
+.my-orders h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Order List Container */
+.my-orders .orders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Order Card */
+.my-orders .my-orders-order {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.my-orders .my-orders-order:hover {
+    transform: scale(1.02);
+}
+
+/* Order Icon */
+.my-orders .order-icon {
+    color: #ff9900;
+    font-size: 28px;
+}
+
+/* Order Details */
+.my-orders .my-orders-order p {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+/* Order Status */
+.my-orders .order-status {
+    font-weight: bold;
+    color: #ff5733;
+    display: flex;
+    align-items: center;
+}
+
+/* Status Dot */
+.my-orders .status-dot {
+    color: red;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Track Order Button */
+.my-orders .track-order-btn {
+    background-color: #ffdde1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.my-orders .track-order-btn:hover {
+    background-color: #ffb3ba;
+}
+
+/* No Orders Message */
+.my-orders .no-orders {
+    text-align: center;
+    font-size: 18px;
+    color: gray;
+    padding: 20px;
+}
+
+/* Track Order Button */
+button {
+    background-color: #ffdde1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffb3ba;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .my-orders .my-orders-order {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .my-orders .my-orders-order p {
+        margin: 5px 0;
+    }
+
+    .my-orders .track-order-btn {
+        width: 100%;
+    }
+}

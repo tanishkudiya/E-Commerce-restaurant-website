@@ -1,0 +1,45 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Global Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Body */
+body {
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Anchor Tags */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #ff6600; /* Change color on hover */
+}
+
+/* Horizontal Line */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #d3d3d3;
+  margin: 10px 0;
+}
+
+/* App Content */
+.app-content {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 20px;
+}

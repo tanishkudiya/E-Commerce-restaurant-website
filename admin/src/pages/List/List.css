@@ -1,0 +1,164 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+/* 🏠 Main Container */
+.list-container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Prevents horizontal scrolling */
+}
+
+/* 📝 Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 📋 Table Container */
+.list-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 📌 Table Header */
+.list-table-format {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 2px solid #ff6600;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 🎨 Table Header Background */
+.title {
+  background: #ff6600;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  flex: 1;
+}
+
+/* 📌 Table Content */
+.list-table-format p {
+  text-align: center;
+  font-size: 16px;
+  flex: 1;
+  color: #505050;
+}
+
+/* 🖼️ Image */
+.list-table-format img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease-in-out;
+}
+
+.list-table-format img:hover {
+  transform: scale(1.1);
+}
+
+/* ❌ Delete Button */
+.delete-btn {
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+  margin-right: 20px;
+}
+
+.delete-btn:hover {
+  color: darkred;
+  transform: scale(1.1);
+}
+
+/* ℹ️ Empty Message */
+.empty-message {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .list-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .list-table-format {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .list-table-format img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  .list-table-format p, 
+  .list-table-format b, 
+  .delete-btn {
+    font-size: 14px;
+  }
+
+  .title {
+    display: none; /* Hide title row on mobile */
+  }
+}
+
+/* 📲 Mobile View */
+@media (max-width: 600px) {
+  .list-table-format {
+    padding: 10px;
+  }
+
+  .list-table-format p {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .list-table-format img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .delete-btn {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+}

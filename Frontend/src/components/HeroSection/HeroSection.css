@@ -1,0 +1,134 @@
+/* Hero Section Styling */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Adjusted height for better layout */
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  text-align: start;
+  color: white;
+  overflow: hidden;
+  border-radius: 20px; /* Smooth edges */
+  padding: 20px;
+  margin-top: 2rem;
+}
+
+/* Background Video Styling */
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers the entire section */
+  filter: brightness(50%); /* Darkens the video for better text visibility */
+  z-index: -1;
+}
+
+/* Hero Content Styling */
+.hero-contents {
+  max-width: 1000px;
+  padding: 20px;
+  z-index: 2;
+  animation: fadeIn 3s;
+}
+
+/* Heading Styling */
+.hero-contents h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* Paragraph Styling */
+.hero-contents p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+.hero-contents .btn-primary {
+  background-color: #ff4500; /* Beautiful orange shade */
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.4);
+}
+
+/* Button Hover Effect */
+.hero-contents .btn-primary:hover {
+  background-color: #e63e00;
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(255, 69, 0, 0.6);
+}
+
+/* 🌟 RESPONSIVE DESIGN 🌟 */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    height: 60vh; /* Reduce height for smaller screens */
+  }
+
+  .hero-contents h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-contents p {
+    font-size: 1.1rem;
+  }
+
+  .hero-contents .btn-primary {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Mobile Phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+    padding: 15px;
+  }
+
+  .hero-contents h2 {
+    font-size: 2rem;
+  }
+
+  .hero-contents p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .hero-contents .btn-primary {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+}
+
+/* Extra Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-contents h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-contents p {
+    font-size: 0.9rem;
+  }
+
+  .hero-contents .btn-primary {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+  }
+}
