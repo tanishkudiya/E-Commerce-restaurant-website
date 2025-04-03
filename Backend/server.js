@@ -3,7 +3,7 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
-import 'dotenv/config';
+import "dotenv/config";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 import path from "path";
@@ -12,7 +12,10 @@ import path from "path";
 const app = express();
 const port = 8080;
 
-const _dirname = path.resolve();
+// Fix: Ensure correct path resolution
+const __dirname = path.resolve();
+const frontendPath = path.join(__dirname, "../Frontend/dist");
+const adminPath = path.join(__dirname, "../Admin/dist");
 
 // Middleware
 app.use(express.json());
@@ -28,24 +31,29 @@ app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
-// Serve Frontend
-app.use(express.static(path.join(_dirname, "/Frontend/dist")));
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(_dirname, "Frontend", "dist", "index.html"));
+// ✅ Serve Frontend
+console.log("Serving Frontend from:", frontendPath);
+app.use(express.static(frontendPath));
+
+// ✅ Serve Admin Panel
+console.log("Serving Admin Panel from:", adminPath);
+app.use("/admin", express.static(adminPath));
+
+// ✅ Handle routes correctly
+app.get("/admin/*", (req, res) => {
+  res.sendFile(path.join(adminPath, "index.html"));
 });
 
-// Serve Admin Panel
-app.use("/admin", express.static(path.join(_dirname, "/Admin/dist")));
-app.get('/admin/*', (req, res) => {
-    res.sendFile(path.resolve(_dirname, "Admin", "dist", "index.html"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 // Health check route
 app.get("/", (req, res) => {
-    res.send("API Working");
+  res.send("API Working");
 });
 
 // Start server
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
