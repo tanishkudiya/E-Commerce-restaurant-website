@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import orderModel from "../models/orderModel.js";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const frontend_url = "http://localhost:5173"; // Centralized for reuse
+const frontend_url = "https://e-commerce-restaurant-website-3-frontend.onrender.com/"; // Centralized for reuse
 
 // 🛒 Place Order API
 const placeOrder = async (req, res) => {
