@@ -10,7 +10,7 @@ import path from "path";
 
 // App config
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 // Fix: Ensure correct path resolution
 const __dirname = path.resolve();
@@ -20,6 +20,7 @@ const adminPath = path.join(__dirname, "../Admin/dist");
 // Middleware
 app.use(express.json());
 app.use(cors());
+
 
 // Database connection
 connectDB();

@@ -11,7 +11,7 @@ const StoreContextProvider = (props) => {
         return savedCart ? JSON.parse(savedCart) : {};
     });
 
-    const url = process.env.VITE_API_URL;
+    const url = "http://localhost:8080";
 
     const [token, setToken] = useState(localStorage.getItem("token") || "");
     const [foodItems, setFoodItems] = useState(foodData || []);
