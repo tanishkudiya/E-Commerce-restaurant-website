@@ -11,7 +11,7 @@ const StoreContextProvider = (props) => {
         return savedCart ? JSON.parse(savedCart) : {};
     });
 
-    const url = "http://localhost:8080";
+    const url = "https://e-commerce-restaurant-website-3.onrender.com";
 
     const [token, setToken] = useState(localStorage.getItem("token") || "");
     const [foodItems, setFoodItems] = useState(foodData || []);
